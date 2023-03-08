@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import LoginForm.LoginForm;
+import adminMain.Admin;
 import adminMain.adminDashBoard;
 
 /**
@@ -60,7 +61,11 @@ public class adminSet extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         profile = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        accName = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -140,16 +145,21 @@ public class adminSet extends javax.swing.JInternalFrame {
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-back-arrow-26.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         backArrow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 30));
 
         dshBody.add(backArrow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 30));
 
         jLabel9.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jLabel9.setText("ACCOUNT SETTINGS");
-        dshBody.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 360, 40));
+        dshBody.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 360, 40));
 
-        jLabel10.setText("PERSONAL INFO:");
-        dshBody.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 100, 20));
+        jLabel10.setText("POSITION:");
+        dshBody.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 100, 20));
 
         profile.setBackground(new java.awt.Color(255, 255, 204));
         profile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -158,9 +168,24 @@ public class adminSet extends javax.swing.JInternalFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-customer-100.png"))); // NOI18N
         profile.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 90, 130));
-        profile.add(accName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 110, 30));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("EDIT PROFILE");
+        profile.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, 30));
 
         dshBody.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 170, 180));
+
+        jLabel12.setText("PERSONAL INFO:");
+        dshBody.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 100, 20));
+
+        jLabel13.setText("ACCOUNT NAME:");
+        dshBody.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 100, 30));
+
+        jLabel14.setText("COMPANY NUMBER:");
+        dshBody.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 100, 20));
+
+        jLabel15.setText("ADDRESS:");
+        dshBody.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 100, 20));
 
         getContentPane().add(dshBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 180));
 
@@ -185,8 +210,9 @@ public class adminSet extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_backArrowMouseExited
 
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-        JFrame mainFrame=(JFrame)SwingUtilities.getWindowAncestor(this);
-        mainFrame.dispose();
+       adminSet as=new adminSet();
+// JFrame mainFrame=(JFrame)SwingUtilities.getWindowAncestor(this);
+        as.dispose();
         LoginForm lf=new LoginForm();
         lf.setVisible(true);
     }//GEN-LAST:event_logoutMouseClicked
@@ -199,24 +225,34 @@ public class adminSet extends javax.swing.JInternalFrame {
         logout.setBackground(headcolor);
     }//GEN-LAST:event_logoutMouseExited
 
-    private void homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseEntered
-          home.setBackground(lightcolor);
-    }//GEN-LAST:event_homeMouseEntered
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+       Admin a=new Admin();
+       a.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     private void homeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseExited
         home.setBackground(headcolor);
     }//GEN-LAST:event_homeMouseExited
 
+    private void homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseEntered
+        home.setBackground(lightcolor);
+    }//GEN-LAST:event_homeMouseEntered
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel accName;
     private javax.swing.JPanel backArrow;
     private javax.swing.JPanel dshBody;
     private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;

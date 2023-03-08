@@ -7,6 +7,10 @@ package LoginForm;
 
 import StudentsMain.studentDashBoard;
 import adminMain.Admin;
+import static adminMain.Admin.archieveData;
+import static adminMain.Admin.viewApplicants;
+import static adminMain.Admin.viewStatus;
+
 import adminMain.adminDashBoard;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -27,6 +31,7 @@ public class LoginForm extends javax.swing.JFrame {
             password.setVisible(false);
             login.setVisible(false);
              cancel.setVisible(false);
+           
     }
     Color logcolor=new Color(51,51,255);
     Color navcolor=new Color(255,66,66);
@@ -70,6 +75,8 @@ public class LoginForm extends javax.swing.JFrame {
         jCombo = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
 
         jLabel9.setText("jLabel9");
 
@@ -236,6 +243,20 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 120, 50));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 232, 340, 10));
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel13.setText("New user? Create here !");
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 160, 30));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 240, 30));
+
         jPanel2.add(jPanel1);
         jPanel1.setBounds(380, 0, 420, 440);
 
@@ -286,7 +307,7 @@ public class LoginForm extends javax.swing.JFrame {
         us.setVisible(true); 
         Admin.manageApply.setVisible(false);
         Admin.userName.setText(username.getText()); 
-        
+        Admin.archieveData.setVisible(false);
         Admin.update.setVisible(false);
          Admin.delete1.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
@@ -296,7 +317,7 @@ public class LoginForm extends javax.swing.JFrame {
         us.setVisible(true); 
         Admin.manageApply.setVisible(false);
         Admin.userName.setText(username.getText()); 
-        
+        Admin.archieveData.setVisible(false);
         Admin.update.setVisible(false);
          Admin.delete1.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
@@ -316,6 +337,8 @@ public class LoginForm extends javax.swing.JFrame {
            Admin.userName.setText(username.getText()); 
            Admin.submit.setVisible(false);
            Admin.reset.setVisible(false);
+           Admin.viewStatus.setVisible(false);
+           Admin.jCombo2.setVisible(false);
           //   Admin.accName.setText(username.getText()); 
             ad.setVisible(true);
          this.dispose();
@@ -408,18 +431,26 @@ public class LoginForm extends javax.swing.JFrame {
             password.setVisible(true);
             login.setVisible(true);
              cancel.setVisible(true);
+           
         }if(jCombo.getSelectedIndex()==2){
              jLabel4.setVisible(true);
             username.setVisible(true);
             password.setVisible(true);
             login.setVisible(true);
-             cancel.setVisible(true);
+             cancel.setVisible(true); 
         }
+           
     }//GEN-LAST:event_jComboActionPerformed
 
     private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
       
     }//GEN-LAST:event_jPanel1MouseEntered
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+      Register1 rg=new Register1();
+      rg.setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_jPanel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -466,6 +497,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -477,6 +509,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel login;
     private javax.swing.JPanel minimize;

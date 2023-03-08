@@ -79,10 +79,10 @@ public class Admin extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         archieveData = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
-        viewStatus = new javax.swing.JPanel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
         viewApplicants = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
+        viewStatus = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         minimize = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -320,7 +320,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel9.setText("LOGOUT");
         logout.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 140, 50));
 
-        nav_student1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 200, 50));
+        nav_student1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 200, 50));
 
         archieveData.setBackground(new java.awt.Color(255, 66, 66));
         archieveData.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -343,7 +343,30 @@ public class Admin extends javax.swing.JFrame {
         jLabel50.setText("ARCHIEVE");
         archieveData.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 170, 50));
 
-        nav_student1.add(archieveData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 200, 50));
+        nav_student1.add(archieveData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 200, 50));
+
+        viewApplicants.setBackground(new java.awt.Color(255, 66, 66));
+        viewApplicants.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                viewApplicantsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                viewApplicantsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                viewApplicantsMouseExited(evt);
+            }
+        });
+        viewApplicants.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel55.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-view-delivery-44.png"))); // NOI18N
+        jLabel55.setText("VIEW ALL");
+        viewApplicants.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 170, 50));
+
+        nav_student1.add(viewApplicants, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 200, 50));
 
         viewStatus.setBackground(new java.awt.Color(255, 66, 66));
         viewStatus.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -359,36 +382,14 @@ public class Admin extends javax.swing.JFrame {
         });
         viewStatus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel55.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-view-delivery-44.png"))); // NOI18N
-        jLabel55.setText("STATUS");
-        viewStatus.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 170, 50));
-
         jLabel43.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 255, 255));
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-view-delivery-44.png"))); // NOI18N
-        jLabel43.setText("VIEW ALL");
-        viewStatus.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, 50));
+        jLabel43.setText("STATUS");
+        viewStatus.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 50));
 
-        viewApplicants.setBackground(new java.awt.Color(255, 66, 66));
-        viewApplicants.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewApplicantsMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                viewApplicantsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                viewApplicantsMouseExited(evt);
-            }
-        });
-        viewApplicants.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        viewStatus.add(viewApplicants, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 50));
-
-        nav_student1.add(viewStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 200, 50));
+        nav_student1.add(viewStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 200, 50));
 
         navbar.add(nav_student1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 200, 670));
 
@@ -478,6 +479,11 @@ public class Admin extends javax.swing.JFrame {
         userName.setFont(new java.awt.Font("Serif", 1, 20)); // NOI18N
         userName.setForeground(new java.awt.Color(255, 255, 255));
         userName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-user-54 (2).png"))); // NOI18N
+        userName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userNameMouseClicked(evt);
+            }
+        });
         header1.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 220, 50));
 
         jPanel1.add(header1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1090, 50));
@@ -680,7 +686,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel1.setText("RESET");
         reset.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 40));
 
-        tabForm.add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, 120, -1));
+        tabForm.add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 120, -1));
 
         submit.setBackground(new java.awt.Color(255, 51, 51));
         submit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -704,7 +710,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel36.setText("SUBMIT");
         submit.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 100, 40));
 
-        tabForm.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, 130, -1));
+        tabForm.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, 130, -1));
 
         jSeparator4.setForeground(new java.awt.Color(255, 0, 0));
         tabForm.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 482, 780, 10));
@@ -721,7 +727,7 @@ public class Admin extends javax.swing.JFrame {
                 jCombo2ActionPerformed(evt);
             }
         });
-        tabForm.add(jCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 520, 160, 40));
+        tabForm.add(jCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 160, 40));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconImagesFolder/27565.png"))); // NOI18N
         tabForm.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
@@ -769,10 +775,10 @@ public class Admin extends javax.swing.JFrame {
         jLabel35.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("UPDATE");
-        update.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 40));
+        jLabel35.setText("UPDATE STATUS");
+        update.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, 40));
 
-        tabManage.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 90, 40));
+        tabManage.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 140, 40));
 
         delete1.setBackground(new java.awt.Color(255, 66, 66));
         delete1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1530,7 +1536,7 @@ switchTab.setSelectedIndex(6);
                 DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
                 tbl.addRow(data);
 
-                JOptionPane.showMessageDialog(this,"Add data successfully...!");
+             //   JOptionPane.showMessageDialog(this,"Add data successfully...!");
 
         }if(jCombo2.getSelectedIndex()==2){
             String fn= FName.getText();
@@ -1556,7 +1562,7 @@ switchTab.setSelectedIndex(6);
                 DefaultTableModel tbl= (DefaultTableModel)jTable6.getModel();
                 tbl.addRow(data);
 
-                JOptionPane.showMessageDialog(this,"Add data successfully...!");
+             //   JOptionPane.showMessageDialog(this,"Add data successfully...!");
               
             
         }if(jCombo2.getSelectedIndex()==3){
@@ -1583,7 +1589,7 @@ switchTab.setSelectedIndex(6);
                 DefaultTableModel tbl= (DefaultTableModel)jTable7.getModel();
                 tbl.addRow(data);
 
-                JOptionPane.showMessageDialog(this,"Add data successfully...!");
+              //  JOptionPane.showMessageDialog(this,"Add data successfully...!");
                 
             
         }
@@ -1650,77 +1656,31 @@ switchTab.setSelectedIndex(6);
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
-         try{
+       /*  try{
             if( jTextField1.getText().equals(""))
                 JOptionPane.showMessageDialog(null, "Enter item!", "Ooops Wait...!", JOptionPane.ERROR_MESSAGE);
            
-            else{
-                BufferedReader rdfile= new BufferedReader( new FileReader("items.txt"));
-
-                String[] itemline= new String[100];
-                String temp[];
-                String search= "", prod="";
-                search= jTextField1.getText();
-                boolean found= false;
-
-                prod= jTextField1.getText();
+            else
                 
-                if( (!(prod.equals(""))) ){
-                    while(( itemline[x]= rdfile.readLine()) != null){
-                        temp= itemline[x].split("\t");
-
-                        if( search.equals( temp[0])){
-                            if( prod.equals(""))
-                                prod= temp[0];
-                           
-                            itemline[x]= prod;
-                            found= true;
-                        }
-                        x++;
-
-
-                    }
-                    rdfile.close();
-
-                    if( found ){
-                        PrintWriter wrfile= new PrintWriter( new FileWriter("items.txt"));
-
-                        for( int j=0; itemline[j] != null; j++)
-                            wrfile.println( itemline[j]);
-
-                        wrfile.close();
-
-                        JOptionPane.showMessageDialog(null, "Changes Saved!");
-                    } else
-                        JOptionPane.showMessageDialog(null, "Item Not Found!");
-
-                    jTextField1.setText("");
-                    jTextField1.setText("");
-                 
-                    
-                    } else
-                    JOptionPane.showMessageDialog( null, "No Changes Yet!");
-            }
-                
-        }catch(IOException e){} catch(NumberFormatException e){
+        } catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Some input may be invalid!");
             
                     jTextField6.setText("");
                
-        }
+        }*/
     
     }//GEN-LAST:event_updateMouseClicked
 
     private void archieveDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_archieveDataMouseClicked
-        // TODO add your handling code here:
+        switchTab.setSelectedIndex(7);
     }//GEN-LAST:event_archieveDataMouseClicked
 
     private void archieveDataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_archieveDataMouseEntered
-        // TODO add your handling code here:
+        archieveData.setBackground(graycolor);
     }//GEN-LAST:event_archieveDataMouseEntered
 
     private void archieveDataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_archieveDataMouseExited
-        // TODO add your handling code here:
+        archieveData.setBackground(headcolor);
     }//GEN-LAST:event_archieveDataMouseExited
 
     private void reset2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reset2MouseExited
@@ -1813,16 +1773,21 @@ switchTab.setSelectedIndex(6);
     }//GEN-LAST:event_backArrow5MouseExited
 
     private void viewStatusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewStatusMouseClicked
-        // TODO add your handling code here:
+     switchTab.setSelectedIndex(2);
     }//GEN-LAST:event_viewStatusMouseClicked
 
     private void viewStatusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewStatusMouseEntered
-        // TODO add your handling code here:
+       manageApply.setBackground(graycolor);
     }//GEN-LAST:event_viewStatusMouseEntered
 
     private void viewStatusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewStatusMouseExited
-        // TODO add your handling code here:
+       manageApply.setBackground(headcolor);
     }//GEN-LAST:event_viewStatusMouseExited
+
+    private void userNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userNameMouseClicked
+       adminSet sp=new adminSet();
+       sp.setVisible(true);
+    }//GEN-LAST:event_userNameMouseClicked
 
 public static void AddRowToJTable(Object[] dataRow){
            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
@@ -1886,7 +1851,7 @@ public static void AddRowToJTable(Object[] dataRow){
     private javax.swing.JPanel header;
     private javax.swing.JPanel header1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jCombo2;
+    public static javax.swing.JComboBox<String> jCombo2;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JInternalFrame jInternalFrame3;
