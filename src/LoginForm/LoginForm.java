@@ -210,7 +210,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/document_tracking_system/images/cheek.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/cheek.png"))); // NOI18N
         jLabel2.setText("LOGIN");
         login.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 130, -1));
 
@@ -322,7 +322,10 @@ public class LoginForm extends javax.swing.JFrame {
            Admin.userName.setText(username.getText()); 
           // Admin.submit.setVisible(false);
            Admin.reset.setVisible(false);
-           Admin.viewStatus.setVisible(false);
+         //  Admin.viewStatus.setVisible(false);
+         Admin.viewApplicants.setVisible(false);
+          Admin.pendings.setVisible(false);
+         
            ad.setVisible(true);
             this.dispose();
        }
@@ -354,6 +357,8 @@ public class LoginForm extends javax.swing.JFrame {
         Admin.archieveData.setVisible(false);
          Admin.delete1.setVisible(false);
           Admin.archieveData.setVisible(false);
+          Admin.viewApplicants.setVisible(false);
+           Admin.pendings.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
         this.dispose();
          }else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
@@ -365,7 +370,9 @@ public class LoginForm extends javax.swing.JFrame {
            Admin.userName.setText(username.getText()); 
           // Admin.submit.setVisible(false);
            Admin.reset.setVisible(false);
-           Admin.viewStatus.setVisible(false);
+           //Admin.viewStatus.setVisible(false);
+           Admin.viewApplicants.setVisible(false);
+            Admin.pendings.setVisible(false);
            ad.setVisible(true);
             this.dispose();
        }
@@ -390,15 +397,18 @@ public class LoginForm extends javax.swing.JFrame {
         Admin.archieveData.setVisible(false);
          Admin.delete1.setVisible(false);
           Admin.archieveData.setVisible(false);
+          Admin.viewApplicants.setVisible(false);
+           Admin.pendings.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
         this.dispose();
          } else{
+             JOptionPane.showMessageDialog(null,"Invalid Account.","Message",JOptionPane.WARNING_MESSAGE);
              if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
             ||bd.equals("")||pe.equals("")||cn.equals("")){
             JOptionPane.showMessageDialog(this,"Please enter all the data!");
 
             }
-            JOptionPane.showMessageDialog(null,"Invalid Account!");
+            
         }
         }if(jCombo.getSelectedIndex()==2){
             if(username.getText().isEmpty()|| password.getText().isEmpty()){
@@ -413,6 +423,8 @@ public class LoginForm extends javax.swing.JFrame {
           // Admin.submit.setVisible(false);
            Admin.reset.setVisible(false);
            Admin.viewStatus.setVisible(false);
+            Admin.nav_apply.setVisible(false);
+            
            ad.setVisible(true);
              this.dispose();
        }
@@ -438,26 +450,30 @@ public class LoginForm extends javax.swing.JFrame {
           // Admin.submit.setVisible(false);
            Admin.reset.setVisible(false);
            Admin.viewStatus.setVisible(false);
-           
+            Admin.nav_apply.setVisible(false);
            //Admin.jCombo2.setVisible(false);
           //   Admin.accName.setText(username.getText()); 
             ad.setVisible(true);
          this.dispose();
         } else{
-            JOptionPane.showMessageDialog(null,"Invalid Account!");
+             JOptionPane.showMessageDialog(null,"Invalid Account.","Message",JOptionPane.WARNING_MESSAGE);
            if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
             ||bd.equals("")||pe.equals("")||cn.equals("")){
-            JOptionPane.showMessageDialog(this,"Please enter all the data!");
+             JOptionPane.showMessageDialog(null,"Please Fill up all the fields.","Message",JOptionPane.WARNING_MESSAGE);
 
             }
-            JOptionPane.showMessageDialog(null,"Invalid Account!");
+            
         }
         }
      
     }//GEN-LAST:event_loginMouseClicked
 
     private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-     System.exit(0);
+      int z=JOptionPane.showConfirmDialog(this, "are you sure do you want to exit this application?","NOTE",JOptionPane.YES_NO_OPTION);
+       if(z==0){
+      System.exit(0);
+       }else{
+       }
     }//GEN-LAST:event_closeMouseClicked
 
     private void closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseEntered

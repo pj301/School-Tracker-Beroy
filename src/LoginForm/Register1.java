@@ -9,6 +9,7 @@ import adminMain.Admin;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author Admin
@@ -20,7 +21,6 @@ public class Register1 extends javax.swing.JFrame {
      */
     public Register1() {
         initComponents();
-        
     }
 Color navcolor=new Color(255,66,66);
     Color logcolor=new Color(51,51,255);
@@ -73,9 +73,16 @@ Color navcolor=new Color(255,66,66);
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         logo = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        minimize = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        close = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backArrow.setBackground(new java.awt.Color(204, 255, 204));
@@ -99,9 +106,9 @@ Color navcolor=new Color(255,66,66);
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        backArrow.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 530));
+        backArrow.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 730, 500));
 
-        getContentPane().add(backArrow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 30));
+        getContentPane().add(backArrow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 50, 30));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,7 +128,7 @@ Color navcolor=new Color(255,66,66);
 
         jLabel57.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jLabel57.setText("ACCOUNT REGISTRATION");
-        jPanel5.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 360, 40));
+        jPanel5.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 310, 40));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel58.setText("PERSONAL INFO:");
@@ -168,7 +175,7 @@ Color navcolor=new Color(255,66,66);
                 jSubmitActionPerformed(evt);
             }
         });
-        jPanel5.add(jSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, -1, -1));
+        jPanel5.add(jSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, -1, -1));
         jPanel5.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 300, 30));
         jPanel5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 300, 30));
         jPanel5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 300, 30));
@@ -179,12 +186,63 @@ Color navcolor=new Color(255,66,66);
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/logo-w-resize-removebg-preview.png"))); // NOI18N
-        jPanel5.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 190, 120));
+        jPanel5.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 190, 120));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 530));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 660, 490));
+
+        header.setBackground(new java.awt.Color(255, 66, 66));
+        header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        minimize.setBackground(new java.awt.Color(255, 66, 66));
+        minimize.setForeground(new java.awt.Color(255, 51, 51));
+        minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                minimizeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                minimizeMouseExited(evt);
+            }
+        });
+        minimize.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-subtract-26.png"))); // NOI18N
+        minimize.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 20));
+
+        header.add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 40, 40));
+
+        close.setBackground(new java.awt.Color(255, 66, 66));
+        close.setForeground(new java.awt.Color(255, 0, 0));
+        close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                closeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                closeMouseExited(evt);
+            }
+        });
+        close.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-close-26.png"))); // NOI18N
+        close.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 20));
+
+        header.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 50, 40));
+
+        jLabel12.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(15, 13, 13));
+        jLabel12.setText("ScholarshipTracker- St.Cecilia's College-Cebu Inc. ");
+        header.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 20));
+
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconImagesFolder/27565.png"))); // NOI18N
-        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 550));
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 550));
 
         pack();
         setLocationRelativeTo(null);
@@ -240,6 +298,34 @@ Color navcolor=new Color(255,66,66);
             
     }//GEN-LAST:event_jSubmitActionPerformed
 
+    private void minimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeMouseClicked
+        setState(ICONIFIED);
+    }//GEN-LAST:event_minimizeMouseClicked
+
+    private void minimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeMouseEntered
+        minimize.setBackground(mincolor);
+    }//GEN-LAST:event_minimizeMouseEntered
+
+    private void minimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeMouseExited
+        minimize.setBackground(headcolor);
+    }//GEN-LAST:event_minimizeMouseExited
+
+    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
+        int z=JOptionPane.showConfirmDialog(this, "are you sure do you want to exit this application?","NOTE",JOptionPane.YES_NO_OPTION);
+        if(z==0){
+            System.exit(0);
+        }else{
+        }
+    }//GEN-LAST:event_closeMouseClicked
+
+    private void closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseEntered
+        close.setBackground(closecolor);
+    }//GEN-LAST:event_closeMouseEntered
+
+    private void closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseExited
+        close.setBackground(headcolor);
+    }//GEN-LAST:event_closeMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -279,12 +365,16 @@ Color navcolor=new Color(255,66,66);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel accName;
     private javax.swing.JPanel backArrow;
+    private javax.swing.JPanel close;
+    private javax.swing.JPanel header;
     private javax.swing.JComboBox<String> jGender1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -293,6 +383,7 @@ Color navcolor=new Color(255,66,66);
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
@@ -306,6 +397,7 @@ Color navcolor=new Color(255,66,66);
     public static javax.swing.JTextField jTextField6;
     public static javax.swing.JTextField jTextField7;
     private javax.swing.JLabel logo;
+    private javax.swing.JPanel minimize;
     private javax.swing.JPanel profile;
     // End of variables declaration//GEN-END:variables
 }
