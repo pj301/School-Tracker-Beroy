@@ -5,7 +5,9 @@
  */
 package LoginForm;
 
+import adminMain.Admin;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,137 +44,39 @@ Color navcolor=new Color(255,66,66);
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        bUsername = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        bContact = new javax.swing.JLabel();
-        bPassword = new javax.swing.JLabel();
-        bAddress = new javax.swing.JLabel();
-        jUsername = new javax.swing.JTextField();
-        jAddress = new javax.swing.JTextField();
-        jContact = new javax.swing.JTextField();
-        jPassword = new javax.swing.JPasswordField();
-        jSubmit = new javax.swing.JButton();
-        jReset = new javax.swing.JButton();
-        jGender = new javax.swing.JComboBox<>();
         backArrow = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        profile = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        accName = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jGender1 = new javax.swing.JComboBox<>();
+        jSubmit = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        logo = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(45,50,155,70));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Register");
-
-        bUsername.setBackground(new java.awt.Color(0, 0, 0));
-        bUsername.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        bUsername.setForeground(new java.awt.Color(255, 255, 255));
-        bUsername.setText("Username: ");
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Gender: ");
-
-        bContact.setBackground(new java.awt.Color(0, 0, 0));
-        bContact.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        bContact.setForeground(new java.awt.Color(255, 255, 255));
-        bContact.setText("Contact No.: ");
-
-        bPassword.setBackground(new java.awt.Color(0, 0, 0));
-        bPassword.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        bPassword.setForeground(new java.awt.Color(255, 255, 255));
-        bPassword.setText("Password: ");
-
-        bAddress.setBackground(new java.awt.Color(0, 0, 0));
-        bAddress.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        bAddress.setForeground(new java.awt.Color(255, 255, 255));
-        bAddress.setText("Address: ");
-
-        jSubmit.setBackground(new java.awt.Color(9, 233, 255));
-        jSubmit.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
-        jSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        jSubmit.setText("Submit");
-
-        jReset.setBackground(new java.awt.Color(9, 233, 255));
-        jReset.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
-        jReset.setForeground(new java.awt.Color(255, 255, 255));
-        jReset.setText("Reset");
-
-        jGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jReset)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(jSubmit)
-                .addGap(85, 85, 85))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bUsername)
-                            .addComponent(jLabel3)
-                            .addComponent(bContact)
-                            .addComponent(bAddress)
-                            .addComponent(bPassword))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jUsername)
-                            .addComponent(jContact, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(jPassword)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(49, 49, 49)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bUsername)
-                    .addComponent(jUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bContact)
-                    .addComponent(jContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bPassword)
-                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bAddress))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSubmit)
-                    .addComponent(jReset))
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 460, 420));
 
         backArrow.setBackground(new java.awt.Color(204, 255, 204));
         backArrow.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -193,26 +97,103 @@ Color navcolor=new Color(255,66,66);
         jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-back-arrow-26.png"))); // NOI18N
         backArrow.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 30, 30));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         backArrow.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 530));
 
-        getContentPane().add(backArrow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 40));
+        getContentPane().add(backArrow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 30));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        profile.setBackground(new java.awt.Color(255, 255, 255));
+        profile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        profile.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-customer-100.png"))); // NOI18N
+        profile.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 90, 130));
+
+        accName.setText("UPLOAD");
+        profile.add(accName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 30));
+
+        jPanel5.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 160, 160));
+
+        jLabel57.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jLabel57.setText("ACCOUNT REGISTRATION");
+        jPanel5.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 360, 40));
+
+        jLabel58.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel58.setText("PERSONAL INFO:");
+        jPanel5.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 110, 20));
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel60.setText("CREATE ACOUNT:");
+        jPanel5.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 120, 20));
+
+        jLabel61.setText("USER NAME:");
+        jPanel5.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 100, 30));
+        jPanel5.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 610, 10));
+
+        jLabel62.setText("FIRST NAME:");
+        jPanel5.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 80, 30));
+
+        jLabel64.setText("PASSWORD:");
+        jPanel5.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 100, 30));
+
+        jLabel65.setText("LAST NAME:");
+        jPanel5.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 80, 30));
+
+        jLabel66.setText("BIRTHDATE:");
+        jPanel5.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 80, 30));
+
+        jLabel68.setText("EMAIL:");
+        jPanel5.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 70, 30));
+
+        jLabel69.setText("GENDER:");
+        jPanel5.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 120, 30));
+
+        jLabel70.setText("CONTACT NUMBER:");
+        jPanel5.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 120, 30));
+
+        jGender1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CHOOSE", "MALE", "FEMALE", " " }));
+        jPanel5.add(jGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 422, 110, 30));
+
+        jSubmit.setBackground(new java.awt.Color(9, 233, 255));
+        jSubmit.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        jSubmit.setText("Submit");
+        jSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSubmitActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, -1, -1));
+        jPanel5.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 300, 30));
+        jPanel5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 300, 30));
+        jPanel5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 300, 30));
+        jPanel5.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 300, 30));
+        jPanel5.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 300, 30));
+        jPanel5.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 300, 30));
+        jPanel5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 300, 30));
+
+        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/logo-w-resize-removebg-preview.png"))); // NOI18N
+        jPanel5.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 190, 120));
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 530));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconImagesFolder/27565.png"))); // NOI18N
-        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 550));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backArrowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backArrowMouseClicked
-        this.toBack();
-       LoginForm lf= new LoginForm();
-        setVisible(false);
-        new LoginForm().toFront();
-        new LoginForm().setState(java.awt.Frame.NORMAL);
-        lf.toFront();
+       LoginForm main = new LoginForm();
+        main.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_backArrowMouseClicked
 
     private void backArrowMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backArrowMouseEntered
@@ -222,6 +203,42 @@ Color navcolor=new Color(255,66,66);
     private void backArrowMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backArrowMouseExited
         backArrow.setBackground(backcolor);
     }//GEN-LAST:event_backArrowMouseExited
+
+    private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed
+        String an=jTextField2.getText();
+         String ps=jTextField3.getText();
+         String fn=jTextField4.getText();
+          String ln=jTextField5.getText();
+         String bd=jTextField6.getText();
+          String pe=jTextField7.getText();
+           String cn=jTextField1.getText();
+        
+            if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
+            ||bd.equals("")||pe.equals("")||cn.equals("")){
+            JOptionPane.showMessageDialog(this,"Please enter all the data!");
+
+            }else {
+                 JOptionPane.showMessageDialog(null,"SUCCESS!");
+            
+            
+           //Admin ad = new Admin();
+            LoginForm  lf = new LoginForm();
+           // Admin.accountName.setText(username.getText());
+        //  Admin.accountPass.setText(password.getText());
+         //  Admin.userName.setText(username.getText()); 
+          // Admin.submit.setVisible(false);
+      /*    Admin.fName.setText(jTextField4.getText());
+         Admin.lName.setText(jTextField4.getText());
+         Admin.bDate.setText(jTextField5.getText());
+         Admin.pEmail.setText(jTextField6.getText());
+          Admin.contactNum.setText(jTextField7.getText());
+           //Admin.jGender.setText(jTextField1.getText());*/
+            
+           lf.setVisible(true);
+         this.dispose();
+        }
+            
+    }//GEN-LAST:event_jSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,23 +277,35 @@ Color navcolor=new Color(255,66,66);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bAddress;
-    private javax.swing.JLabel bContact;
-    private javax.swing.JLabel bPassword;
-    private javax.swing.JLabel bUsername;
+    private javax.swing.JLabel accName;
     private javax.swing.JPanel backArrow;
-    private javax.swing.JTextField jAddress;
-    private javax.swing.JTextField jContact;
-    private javax.swing.JComboBox<String> jGender;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JComboBox<String> jGender1;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel70;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPassword;
-    private javax.swing.JButton jReset;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JButton jSubmit;
-    private javax.swing.JTextField jUsername;
+    public static javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField jTextField3;
+    public static javax.swing.JTextField jTextField4;
+    public static javax.swing.JTextField jTextField5;
+    public static javax.swing.JTextField jTextField6;
+    public static javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel logo;
+    private javax.swing.JPanel profile;
     // End of variables declaration//GEN-END:variables
 }

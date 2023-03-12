@@ -5,15 +5,35 @@
  */
 package LoginForm;
 
-import StudentsMain.studentDashBoard;
-import adminMain.Admin;
-import static adminMain.Admin.archieveData;
-import static adminMain.Admin.viewApplicants;
-import static adminMain.Admin.viewStatus;
+import static LoginForm.Register1.jTextField1;
+import static LoginForm.Register1.jTextField2;
+import static LoginForm.Register1.jTextField3;
+import static LoginForm.Register1.jTextField4;
+import static LoginForm.Register1.jTextField5;
+import static LoginForm.Register1.jTextField6;
+import static LoginForm.Register1.jTextField7;
 
-import adminMain.adminDashBoard;
+import adminMain.Admin;
+/*
+import static adminMain.Admin.Bdate;
+import static adminMain.Admin.FName;
+import static adminMain.Admin.LName;
+import static adminMain.Admin.MName;
+import static adminMain.Admin.archieveData;
+import static adminMain.Admin.brgy;
+import static adminMain.Admin.city;
+import static adminMain.Admin.email;
+import static adminMain.Admin.gender;
+import static adminMain.Admin.jTable5;
+import static adminMain.Admin.number;
+import static adminMain.Admin.postal;
+import static adminMain.Admin.province;
+import static adminMain.Admin.purok;
+import javax.swing.table.DefaultTableModel;
+*/
 import java.awt.Color;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -29,9 +49,7 @@ public class LoginForm extends javax.swing.JFrame {
              jLabel4.setVisible(false);
             username.setVisible(false);
             password.setVisible(false);
-            login.setVisible(false);
-             cancel.setVisible(false);
-           
+            login.setVisible(false);          
     }
     Color logcolor=new Color(51,51,255);
     Color navcolor=new Color(255,66,66);
@@ -67,8 +85,6 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
-        cancel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         login = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -177,29 +193,6 @@ public class LoginForm extends javax.swing.JFrame {
         password.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(51, 51, 51), null), "Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Serif", 1, 18))); // NOI18N
         jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 340, 70));
 
-        cancel.setBackground(new java.awt.Color(0, 43, 50));
-        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cancelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cancelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                cancelMouseExited(evt);
-            }
-        });
-        cancel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/document_tracking_system/images/Cancel_22px.png"))); // NOI18N
-        jLabel3.setText("CANCEL");
-        cancel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 130, 40));
-
         login.setBackground(new java.awt.Color(0, 43, 50));
         login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -219,9 +212,9 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/document_tracking_system/images/cheek.png"))); // NOI18N
         jLabel2.setText("LOGIN");
-        login.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+        login.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 130, -1));
 
-        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 130, 40));
+        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 340, 40));
 
         jLabel4.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel4.setText("PS: Write your id no. if you're a student");
@@ -248,12 +241,20 @@ public class LoginForm extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel4MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel4MousePressed(evt);
+            }
         });
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        jLabel13.setText("New user? Create here !");
-        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 160, 30));
+        jLabel13.setText("New user? Create Account !");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 170, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 240, 30));
 
@@ -275,14 +276,6 @@ public class LoginForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseEntered
-        cancel.setBackground(headcolor);      
-    }//GEN-LAST:event_cancelMouseEntered
-
-    private void cancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseExited
-        cancel.setBackground(logincolor);
-    }//GEN-LAST:event_cancelMouseExited
-
     private void loginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseEntered
         login.setBackground(headcolor);
     }//GEN-LAST:event_loginMouseEntered
@@ -292,112 +285,176 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_loginMouseExited
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-
+ 
+        /* String f= FName.getText();
+            String l= LName.getText();
+            String m= MName.getText();
+            String b= Bdate.getText();
+            String n= number.getText();
+            String e= email.getText();
+            String by= brgy.getText();
+            String pk= purok.getText();
+            String cy= city.getText();
+            String prov= province.getText();
+            String pl= postal.getText();
+            String gr= gender.getText();
+        */
+        String an=jTextField2.getText();
+         String ps=jTextField3.getText();
+         String fn=jTextField4.getText();
+          String ln=jTextField5.getText();
+         String bd=jTextField6.getText();
+          String pe=jTextField7.getText();
+           String cn=jTextField1.getText();
+        
        String user= username.getText();
         String pass= password.getText();
       if(jCombo.getSelectedIndex()==1){
-          
+             
          if(username.getText().isEmpty()|| password.getText().isEmpty()){
            JOptionPane.showMessageDialog(null,"Please Fill up other fields.","Message",JOptionPane.WARNING_MESSAGE);
+       }else if(user.equals("SCC-19-0009694")&&pass.equals("10-03-2002")){
+        JOptionPane.showMessageDialog(null,"SUCCESS!");
+         Admin ad = new Admin();
+
+            Admin.accountName.setText(username.getText());
+          Admin.accountPass.setText(password.getText());
+           Admin.userName.setText(username.getText()); 
+          // Admin.submit.setVisible(false);
+           Admin.reset.setVisible(false);
+           Admin.viewStatus.setVisible(false);
+           ad.setVisible(true);
+            this.dispose();
        }
-         else if(user.equals("SCC-19-0009694")&&pass.equals("10-03-2002")){
+         else if(user.equals(an)&&pass.equals(ps)){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
           
         Admin us = new Admin();
         us.setVisible(true); 
+           // Admin.accountName.setText(username.getText());
+        //  Admin.accountPass.setText(password.getText());
+         //  Admin.userName.setText(username.getText()); 
+          // Admin.submit.setVisible(false);
+        
+          Admin.fName.setText(jTextField4.getText());
+         Admin.lName.setText(jTextField5.getText());
+         Admin.bDate.setText(jTextField6.getText());
+         Admin.pEmail.setText(jTextField7.getText());
+          Admin.contactNum.setText(jTextField1.getText());
+        /*   String data[]={FName.getText(),LName.getText(),MName.getText(),
+                    Bdate.getText(),number.getText(),email.getText(),brgy.getText(),
+                    purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
+                DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
+                tbl.addRow(data);
+             */
         Admin.manageApply.setVisible(false);
         Admin.userName.setText(username.getText()); 
+        Admin.accountName.setText(username.getText());
+          Admin.accountPass.setText(password.getText());
         Admin.archieveData.setVisible(false);
-        Admin.update.setVisible(false);
          Admin.delete1.setVisible(false);
+          Admin.archieveData.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
         this.dispose();
          }else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
+        JOptionPane.showMessageDialog(null,"SUCCESS!");
+         Admin ad = new Admin();
+        
+            Admin.accountName.setText(username.getText());
+          Admin.accountPass.setText(password.getText());
+           Admin.userName.setText(username.getText()); 
+          // Admin.submit.setVisible(false);
+           Admin.reset.setVisible(false);
+           Admin.viewStatus.setVisible(false);
+           ad.setVisible(true);
+            this.dispose();
+       }
+         else if(user.equals(an)&&pass.equals(ps)){
+//else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
              Admin us = new Admin();
         us.setVisible(true); 
+      /*  String data[]={FName.getText(),LName.getText(),MName.getText(),
+                    Bdate.getText(),number.getText(),email.getText(),brgy.getText(),
+                    purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
+                DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
+                tbl.addRow(data);*/
+           Admin.fName.setText(jTextField4.getText());
+         Admin.lName.setText(jTextField5.getText());
+         Admin.bDate.setText(jTextField6.getText());
+         Admin.pEmail.setText(jTextField7.getText());
+          Admin.contactNum.setText(jTextField1.getText());
         Admin.manageApply.setVisible(false);
+         Admin.accountName.setText(username.getText());
+          Admin.accountPass.setText(password.getText());
         Admin.userName.setText(username.getText()); 
         Admin.archieveData.setVisible(false);
-        Admin.update.setVisible(false);
          Admin.delete1.setVisible(false);
+          Admin.archieveData.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
         this.dispose();
          } else{
+             if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
+            ||bd.equals("")||pe.equals("")||cn.equals("")){
+            JOptionPane.showMessageDialog(this,"Please enter all the data!");
+
+            }
             JOptionPane.showMessageDialog(null,"Invalid Account!");
         }
         }if(jCombo.getSelectedIndex()==2){
             if(username.getText().isEmpty()|| password.getText().isEmpty()){
-           JOptionPane.showMessageDialog(null,"Please Fill up other fields.","Message",JOptionPane.WARNING_MESSAGE);
+           JOptionPane.showMessageDialog(null,"Please Fill up all the fields.","Message",JOptionPane.WARNING_MESSAGE);
        }else if(user.equals("ADMIN1")&&pass.equals("PASSWORD1")){
+        JOptionPane.showMessageDialog(null,"SUCCESS!");
+         Admin ad = new Admin();
+       
+            Admin.accountName.setText(username.getText());
+          Admin.accountPass.setText(password.getText());
+           Admin.userName.setText(username.getText()); 
+          // Admin.submit.setVisible(false);
+           Admin.reset.setVisible(false);
+           Admin.viewStatus.setVisible(false);
+           ad.setVisible(true);
+             this.dispose();
+       }
+            else if(user.equals(an)&&pass.equals(ps) ){
+            ///else if(user.equals("ADMIN1")&&pass.equals("PASSWORD1")){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
             
             
             Admin ad = new Admin();
-
+         /*   String data[]={FName.getText(),LName.getText(),MName.getText(),
+                    Bdate.getText(),number.getText(),email.getText(),brgy.getText(),
+                    purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
+                DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
+                tbl.addRow(data);*/
+              Admin.fName.setText(jTextField4.getText());
+         Admin.lName.setText(jTextField5.getText());
+         Admin.bDate.setText(jTextField6.getText());
+         Admin.pEmail.setText(jTextField7.getText());
+          Admin.contactNum.setText(jTextField1.getText());
+            Admin.accountName.setText(username.getText());
+          Admin.accountPass.setText(password.getText());
            Admin.userName.setText(username.getText()); 
-           Admin.submit.setVisible(false);
+          // Admin.submit.setVisible(false);
            Admin.reset.setVisible(false);
            Admin.viewStatus.setVisible(false);
-           Admin.jCombo2.setVisible(false);
+           
+           //Admin.jCombo2.setVisible(false);
           //   Admin.accName.setText(username.getText()); 
             ad.setVisible(true);
          this.dispose();
         } else{
             JOptionPane.showMessageDialog(null,"Invalid Account!");
-        }
-        }
-      /* if(user.equals("ADMIN1")&&pass.equals("PASSWORD1")){
-        JOptionPane.showMessageDialog(null,"SUCCESS!");
-           
-         adminDashBoard db=new adminDashBoard ();
-        db.setVisible(true);
-      //  adminDashBoard.nav_account.setVisible(false);
-        this.dispose();
-            
-      adminDashBoard .accName1.setText("HELLO! WELCOME,");
-        adminDashBoard .accName2.setText(username.getText()); 
-        }else if(user.equals("SCC-19-0009694")&&pass.equals("10-03-2002")){
-        JOptionPane.showMessageDialog(null,"SUCCESS!");
-           
-        studentDashBoard  db=new studentDashBoard ();
-        db.setVisible(true);
-       //adminDashBoard .nav_dashboard2.setVisible(false);
-        this.dispose();
-            
-          studentDashBoard .accName1.setText("WELCOME! ,");
-       studentDashBoard .accName2.setText(username.getText());   
-        } else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
-        JOptionPane.showMessageDialog(null,"SUCCESS!");
-           
-         studentDashBoard  db=new studentDashBoard ();
-        db.setVisible(true);
-        //adminDashBoard .nav_dashboard2.setVisible(false);
-        this.dispose();
-            
-          adminDashBoard .accName1.setText("HELLO! WELCOME,");
-        adminDashBoard .accName2.setText(username.getText());   
-        } 
-       else if(user.equals("ADMIN2")&&pass.equals("PASSWORD2")){
-        JOptionPane.showMessageDialog(null,"SUCCESS!");
-           
-         adminDashBoard db=new adminDashBoard ();
-        db.setVisible(true);
-      //  adminDashBoard.nav_account.setVisible(false);
-        this.dispose();
-            
-      adminDashBoard .accName1.setText("HELLO! WELCOME,");
-        adminDashBoard .accName2.setText(username.getText()); 
-        } 
-        else{
+           if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
+            ||bd.equals("")||pe.equals("")||cn.equals("")){
+            JOptionPane.showMessageDialog(this,"Please enter all the data!");
+
+            }
             JOptionPane.showMessageDialog(null,"Invalid Account!");
-        }*/
+        }
+        }
      
     }//GEN-LAST:event_loginMouseClicked
-
-    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
-     username.setText("");
-     password.setText("");
-    }//GEN-LAST:event_cancelMouseClicked
 
     private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
      System.exit(0);
@@ -425,19 +482,19 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void jComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboActionPerformed
         // TODO add your handling code here:
+      
+            
         if(jCombo.getSelectedIndex()==1){
             jLabel4.setVisible(true);
             username.setVisible(true);
             password.setVisible(true);
             login.setVisible(true);
-             cancel.setVisible(true);
            
         }if(jCombo.getSelectedIndex()==2){
              jLabel4.setVisible(true);
             username.setVisible(true);
             password.setVisible(true);
             login.setVisible(true);
-             cancel.setVisible(true); 
         }
            
     }//GEN-LAST:event_jComboActionPerformed
@@ -447,10 +504,20 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseEntered
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-      Register1 rg=new Register1();
+     Register1 rg=new Register1();
       rg.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+      Register1 rg=new Register1();
+      rg.setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
+      
+    }//GEN-LAST:event_jPanel4MousePressed
 
     /**
      * @param args the command line arguments
@@ -489,7 +556,6 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel cancel;
     private javax.swing.JPanel close;
     private javax.swing.JPanel header;
     private javax.swing.JComboBox<String> jCombo;
@@ -499,7 +565,6 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
