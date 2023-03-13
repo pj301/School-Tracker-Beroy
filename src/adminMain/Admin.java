@@ -622,7 +622,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/document_tracking_system/images/home.png"))); // NOI18N
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/home.png"))); // NOI18N
         jLabel38.setText("  HOME");
         appHome.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 80, 50));
 
@@ -918,6 +918,9 @@ public class Admin extends javax.swing.JFrame {
 
         delete1.setBackground(new java.awt.Color(255, 66, 66));
         delete1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                delete1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 delete1MouseEntered(evt);
             }
@@ -1828,7 +1831,7 @@ int x=1082;
                     purok.getText()+city.getText()+province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
                 tbl.addRow(data);
-                 tbl.setValueAt("PENDING",jTable5.getSelectedRow(),10);
+                 tbl.setValueAt("PENDING",jTable5.getSelectedRow(),9);
          // JOptionPane.showMessageDialog(this,"Add data successfully...!");
              }else if (jCombo2.getSelectedIndex()==2){
                  String data[]={FName.getText(),LName.getText(),MName.getText(),
@@ -1836,7 +1839,7 @@ int x=1082;
                     purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable6.getModel();
                 tbl.addRow(data);
-                 tbl.setValueAt("PENDING",jTable6.getSelectedRow(),10);
+                 tbl.setValueAt("PENDING",jTable6.getSelectedRow(),9);
                  JOptionPane.showMessageDialog(this,"Add data successfully...!");
              }else if (jCombo2.getSelectedIndex()==3){
                    JOptionPane.showMessageDialog(this,"Add data successfully...!");
@@ -1845,7 +1848,7 @@ int x=1082;
                     purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable7.getModel();
                 tbl.addRow(data);
-                 tbl.setValueAt("PENDING",jTable7.getSelectedRow(),10);
+                 tbl.setValueAt("PENDING",jTable7.getSelectedRow(),9);
                 // JOptionPane.showMessageDialog(this,"Add data successfully...!");
              }
          /*   FName.setText("");
@@ -2096,9 +2099,9 @@ switchTab.setSelectedIndex(6);
            DefaultTableModel tbl1= (DefaultTableModel)jTable6.getModel();
            DefaultTableModel tbl2= (DefaultTableModel)jTable7.getModel();
            if(jTable5.getSelectedRowCount()==1){
-            tbl.setValueAt("APPROVED",jTable5.getSelectedRow(),10); 
-            tbl.setValueAt("APPROVED",jTable6.getSelectedRow(),10); 
-            tbl.setValueAt("APPROVED",jTable7.getSelectedRow(),10); 
+            tbl.setValueAt("APPROVED",jTable5.getSelectedRow(),9); 
+            tbl.setValueAt("APPROVED",jTable6.getSelectedRow(),9); 
+            tbl.setValueAt("APPROVED",jTable7.getSelectedRow(),9); 
        }
        }else{
        
@@ -2229,7 +2232,7 @@ u_name.setVisible(true);
                     purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable6.getModel();
                 tbl.addRow(data);
-                 tbl.setValueAt("PENDING",jTable6.getSelectedRow(),10);
+                 tbl.setValueAt("PENDING",jTable6.getSelectedRow(),9);
                 // JOptionPane.showMessageDialog(this,"Add data successfully...!");
              }else if (jCombo2.getSelectedIndex()==3){
                     Admin.fName1.setText(FName.getText()+" "+MName.getText()+" "+LName.getText());
@@ -2244,7 +2247,7 @@ u_name.setVisible(true);
                     Bdate.getText(),number.getText(),email.getText(),brgy.getText()+purok.getText()+city.getText()+province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable7.getModel();
                 tbl.addRow(data);
-                tbl.setValueAt("PENDING",jTable7.getSelectedRow(),10);
+                tbl.setValueAt("PENDING",jTable7.getSelectedRow(),9);
                 // JOptionPane.showMessageDialog(this,"Add data successfully...!");
              }
     }//GEN-LAST:event_viewStatusMouseClicked
@@ -2352,6 +2355,27 @@ u_name.setVisible(true);
     private void jPanel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseExited
        jPanel13.setBackground(whitecolor);
     }//GEN-LAST:event_jPanel13MouseExited
+
+    private void delete1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete1MouseClicked
+       int z=JOptionPane.showConfirmDialog(this, "Do you want to delete data?","NOTE",JOptionPane.YES_NO_OPTION);
+       if(z==0){
+           JOptionPane.showMessageDialog(null,"Updated Successfully");
+           DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
+           DefaultTableModel tbl1= (DefaultTableModel)jTable6.getModel();
+           DefaultTableModel tbl2= (DefaultTableModel)jTable7.getModel();
+           if(jTable5.getSelectedRowCount()==1){
+           tbl.removeRow(jTable5.getSelectedRow());
+            tbl1.removeRow(jTable6.getSelectedRow());
+             tbl2.removeRow(jTable7.getSelectedRow());
+       }
+       }else{
+        if(jTable5.getSelectedRowCount()==0){
+             JOptionPane.showMessageDialog(this,"Table is Empty");
+        }else{
+             JOptionPane.showMessageDialog(this,"Select Row to Delete");
+        }
+       }
+    }//GEN-LAST:event_delete1MouseClicked
 
 public static void AddRowToJTable(Object[] dataRow){
   

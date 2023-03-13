@@ -323,8 +323,12 @@ public class LoginForm extends javax.swing.JFrame {
           // Admin.submit.setVisible(false);
            Admin.reset.setVisible(false);
          //  Admin.viewStatus.setVisible(false);
-         Admin.viewApplicants.setVisible(false);
-          Admin.pendings.setVisible(false);
+            Admin.viewApplicants.setVisible(false);
+            Admin.pendings.setVisible(false);
+         Admin.delete1.setVisible(false);
+          Admin.archieveData.setVisible(false);
+          Admin.viewApplicants.setVisible(false);
+           Admin.pendings.setVisible(false);
          
            ad.setVisible(true);
             this.dispose();
@@ -354,7 +358,8 @@ public class LoginForm extends javax.swing.JFrame {
         Admin.userName.setText(username.getText()); 
         Admin.accountName.setText(username.getText());
           Admin.accountPass.setText(password.getText());
-        Admin.archieveData.setVisible(false);
+           Admin.viewApplicants.setVisible(false);
+            Admin.pendings.setVisible(false);
          Admin.delete1.setVisible(false);
           Admin.archieveData.setVisible(false);
           Admin.viewApplicants.setVisible(false);
@@ -373,6 +378,10 @@ public class LoginForm extends javax.swing.JFrame {
            //Admin.viewStatus.setVisible(false);
            Admin.viewApplicants.setVisible(false);
             Admin.pendings.setVisible(false);
+         Admin.delete1.setVisible(false);
+          Admin.archieveData.setVisible(false);
+          Admin.viewApplicants.setVisible(false);
+           Admin.pendings.setVisible(false);
            ad.setVisible(true);
             this.dispose();
        }
