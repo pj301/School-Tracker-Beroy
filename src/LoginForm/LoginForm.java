@@ -299,13 +299,13 @@ public class LoginForm extends javax.swing.JFrame {
             String pl= postal.getText();
             String gr= gender.getText();
         */
-        String an=jTextField2.getText();
+/*        String an=jTextField2.getText();
          String ps=jTextField3.getText();
          String fn=jTextField4.getText();
           String ln=jTextField5.getText();
          String bd=jTextField6.getText();
           String pe=jTextField7.getText();
-           String cn=jTextField1.getText();
+           String cn=jTextField1.getText();*/
         
        String user= username.getText();
         String pass= password.getText();
@@ -324,6 +324,7 @@ public class LoginForm extends javax.swing.JFrame {
            Admin.reset.setVisible(false);
          //  Admin.viewStatus.setVisible(false);
             Admin.viewApplicants.setVisible(false);
+             Admin.manageApply.setVisible(false);
             Admin.pendings.setVisible(false);
          Admin.delete1.setVisible(false);
           Admin.archieveData.setVisible(false);
@@ -333,7 +334,7 @@ public class LoginForm extends javax.swing.JFrame {
            ad.setVisible(true);
             this.dispose();
        }
-         else if(user.equals(an)&&pass.equals(ps)){
+       /*  else if(user.equals(an)&&pass.equals(ps)){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
           
         Admin us = new Admin();
@@ -346,15 +347,15 @@ public class LoginForm extends javax.swing.JFrame {
           Admin.fName.setText(jTextField4.getText());
          Admin.lName.setText(jTextField5.getText());
          Admin.bDate.setText(jTextField6.getText());
-         Admin.pEmail.setText(jTextField7.getText());
-          Admin.contactNum.setText(jTextField1.getText());
+         Admin.pEmail.setText(jTextField7.getText());*
+          Admin.contactNum.setText(jTextField1.getText());*/
         /*   String data[]={FName.getText(),LName.getText(),MName.getText(),
                     Bdate.getText(),number.getText(),email.getText(),brgy.getText(),
                     purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
                 tbl.addRow(data);
              */
-        Admin.manageApply.setVisible(false);
+   /*     Admin.manageApply.setVisible(false);
         Admin.userName.setText(username.getText()); 
         Admin.accountName.setText(username.getText());
           Admin.accountPass.setText(password.getText());
@@ -366,7 +367,8 @@ public class LoginForm extends javax.swing.JFrame {
            Admin.pendings.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
         this.dispose();
-         }else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
+         }*/
+         else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
          Admin ad = new Admin();
         
@@ -377,6 +379,7 @@ public class LoginForm extends javax.swing.JFrame {
            Admin.reset.setVisible(false);
            //Admin.viewStatus.setVisible(false);
            Admin.viewApplicants.setVisible(false);
+             Admin.manageApply.setVisible(false);
             Admin.pendings.setVisible(false);
          Admin.delete1.setVisible(false);
           Admin.archieveData.setVisible(false);
@@ -385,16 +388,16 @@ public class LoginForm extends javax.swing.JFrame {
            ad.setVisible(true);
             this.dispose();
        }
-         else if(user.equals(an)&&pass.equals(ps)){
+        /* else if(user.equals(an)&&pass.equals(ps)){
 //else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
              Admin us = new Admin();
-        us.setVisible(true); 
+        us.setVisible(true); */
       /*  String data[]={FName.getText(),LName.getText(),MName.getText(),
                     Bdate.getText(),number.getText(),email.getText(),brgy.getText(),
                     purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
                 tbl.addRow(data);*/
-           Admin.fName.setText(jTextField4.getText());
+       /*    Admin.fName.setText(jTextField4.getText());
          Admin.lName.setText(jTextField5.getText());
          Admin.bDate.setText(jTextField6.getText());
          Admin.pEmail.setText(jTextField7.getText());
@@ -410,13 +413,13 @@ public class LoginForm extends javax.swing.JFrame {
            Admin.pendings.setVisible(false);
         //Admin.nav_dashboard.setVisible(false);
         this.dispose();
-         } else{
+         }*/ else{
              JOptionPane.showMessageDialog(null,"Invalid Account.","Message",JOptionPane.WARNING_MESSAGE);
-             if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
+            /* if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
             ||bd.equals("")||pe.equals("")||cn.equals("")){
             JOptionPane.showMessageDialog(this,"Please enter all the data!");
 
-            }
+            }*/
             
         }
         }if(jCombo.getSelectedIndex()==2){
@@ -437,18 +440,18 @@ public class LoginForm extends javax.swing.JFrame {
            ad.setVisible(true);
              this.dispose();
        }
-            else if(user.equals(an)&&pass.equals(ps) ){
+            /*else if(user.equals(an)&&pass.equals(ps) ){
             ///else if(user.equals("ADMIN1")&&pass.equals("PASSWORD1")){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
             
             
-            Admin ad = new Admin();
+            Admin ad = new Admin();*/
          /*   String data[]={FName.getText(),LName.getText(),MName.getText(),
                     Bdate.getText(),number.getText(),email.getText(),brgy.getText(),
                     purok.getText(),city.getText(),province.getText(),postal.getText(),gender.getText()};
                 DefaultTableModel tbl= (DefaultTableModel)jTable5.getModel();
                 tbl.addRow(data);*/
-              Admin.fName.setText(jTextField4.getText());
+          /*    Admin.fName.setText(jTextField4.getText());
          Admin.lName.setText(jTextField5.getText());
          Admin.bDate.setText(jTextField6.getText());
          Admin.pEmail.setText(jTextField7.getText());
@@ -464,13 +467,13 @@ public class LoginForm extends javax.swing.JFrame {
           //   Admin.accName.setText(username.getText()); 
             ad.setVisible(true);
          this.dispose();
-        } else{
+        } */else{
              JOptionPane.showMessageDialog(null,"Invalid Account.","Message",JOptionPane.WARNING_MESSAGE);
-           if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
+        /*   if(an.equals("")||ps.equals("")||fn.equals("")||ln.equals("")
             ||bd.equals("")||pe.equals("")||cn.equals("")){
              JOptionPane.showMessageDialog(null,"Please Fill up all the fields.","Message",JOptionPane.WARNING_MESSAGE);
 
-            }
+            }*/
             
         }
         }

@@ -6,8 +6,11 @@
 package adminMain;
 
 import LoginForm.LoginForm;
+import config.db_configuration;
 //import static adminMain..table;
 import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 /*import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,6 +21,7 @@ import javax.swing.JOptionPane;
 //import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
 /**
  *
  * @author Admin
@@ -29,6 +33,13 @@ public class Admin extends javax.swing.JFrame {
     /**
      * Creates new form Admin
      */
+    public void fillTable() throws SQLException{
+    
+    db_configuration dbc=new db_configuration();
+    ResultSet rs=dbc.getData("SELECT*FROM tbl_student");
+    jTable8.setModel(DbUtils.resultSetToTableModel(rs));
+    }
+    
     public Admin() {
         initComponents();
          nav_apply.setVisible(true);
@@ -214,6 +225,14 @@ public class Admin extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTable8 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        sgen = new javax.swing.JTextField();
+        sid = new javax.swing.JTextField();
+        sname = new javax.swing.JTextField();
+        sadd = new javax.swing.JTextField();
+        sstat = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel76 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         s1 = new javax.swing.JPanel();
@@ -1007,7 +1026,7 @@ public class Admin extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(jTable5);
 
-        unifast.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 760, 390));
+        unifast.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 760, 310));
 
         jLabel67.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel67.setText("UNIFAST SCHOLARSHIP APPLICANTS");
@@ -1174,26 +1193,47 @@ public class Admin extends javax.swing.JFrame {
         jPanel4.add(reset2);
         reset2.setBounds(460, 520, 220, 40);
 
-        jTable8.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "First Name", "Midle Name", "Last Name", "Birth Date", "Contact No.", "Email         ", "Address", "Postal", "Gender", "Status"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
         jScrollPane9.setViewportView(jTable8);
 
         jPanel4.add(jScrollPane9);
-        jScrollPane9.setBounds(30, 60, 840, 420);
+        jScrollPane9.setBounds(320, 60, 550, 420);
+
+        jButton1.setText("DISPLAY");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton1);
+        jButton1.setBounds(184, 433, 73, 30);
+        jPanel4.add(sgen);
+        sgen.setBounds(30, 360, 270, 50);
+        jPanel4.add(sid);
+        sid.setBounds(30, 80, 270, 50);
+        jPanel4.add(sname);
+        sname.setBounds(30, 150, 270, 50);
+        jPanel4.add(sadd);
+        sadd.setBounds(30, 220, 270, 50);
+        jPanel4.add(sstat);
+        sstat.setBounds(30, 290, 270, 50);
+
+        jButton2.setText("jButton1");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton2);
+        jButton2.setBounds(80, 520, 73, 23);
+
+        jButton3.setText("SAVE");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton3);
+        jButton3.setBounds(70, 433, 57, 30);
 
         jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconImagesFolder/27565.png"))); // NOI18N
         jPanel4.add(jLabel76);
@@ -2377,6 +2417,28 @@ u_name.setVisible(true);
        }
     }//GEN-LAST:event_delete1MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        try{
+            fillTable();
+            
+        }catch(SQLException e){
+            System.out.println("Error is:"+e);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+     db_configuration dbc=new db_configuration();
+     dbc.insertData("INSERT INTO tbl_student(st_name,st_address,st_status,_st_gender)VALUES('"+"',"
+             + "'"+sname.getText()+"','"+sadd.getText()+"','"+sstat.getText()+"','"+sgen.getText()+"')");
+  
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 public static void AddRowToJTable(Object[] dataRow){
   
        }
@@ -2449,6 +2511,9 @@ public static void AddRowToJTable(Object[] dataRow){
     public static javax.swing.JLabel genderInfo;
     private javax.swing.JPanel header;
     private javax.swing.JPanel header1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     public static javax.swing.JComboBox<String> jCombo2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -2632,10 +2697,15 @@ public static void AddRowToJTable(Object[] dataRow){
     private javax.swing.JPanel s4;
     private javax.swing.JPanel s5;
     private javax.swing.JPanel s6;
+    private javax.swing.JTextField sadd;
     private javax.swing.JButton saveButton;
     private javax.swing.JButton saveButton1;
     private javax.swing.JLabel scc;
     private javax.swing.JPanel scholarLogo;
+    private javax.swing.JTextField sgen;
+    private javax.swing.JTextField sid;
+    private javax.swing.JTextField sname;
+    private javax.swing.JTextField sstat;
     public static javax.swing.JPanel submit;
     private static javax.swing.JTabbedPane switchTab;
     private javax.swing.JPanel tabForm;
