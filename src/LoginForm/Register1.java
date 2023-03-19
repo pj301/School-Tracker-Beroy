@@ -5,7 +5,7 @@
  */
 package LoginForm;
 
-import adminMain.Admin;
+import adminMain.mainDashboard;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -34,7 +34,7 @@ Color navcolor=new Color(255,66,66);
     Color logincolor=new Color(0,43,50);
      Color whitecolor=new Color(255,255,255);
     Color graycolor=new Color(51,51,51);
-    Color dgreencolor=new Color(27,102,102);
+    Color lightgreencolor=new Color(204,255,204);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -259,7 +259,7 @@ Color navcolor=new Color(255,66,66);
     }//GEN-LAST:event_backArrowMouseEntered
 
     private void backArrowMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backArrowMouseExited
-        backArrow.setBackground(backcolor);
+        backArrow.setBackground(lightgreencolor);
     }//GEN-LAST:event_backArrowMouseExited
 
     private void jSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitActionPerformed

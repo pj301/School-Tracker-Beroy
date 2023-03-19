@@ -5,7 +5,7 @@
  */
 package config;
 
-import static adminMain.Admin.jTable8;
+import static adminMain.mainDashboard.jTable8;
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

@@ -13,7 +13,7 @@ import static LoginForm.Register1.jTextField5;
 import static LoginForm.Register1.jTextField6;
 import static LoginForm.Register1.jTextField7;
 
-import adminMain.Admin;
+import adminMain.mainDashboard;
 /*
 import static adminMain.Admin.Bdate;
 import static adminMain.Admin.FName;
@@ -315,21 +315,21 @@ public class LoginForm extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"Please Fill up other fields.","Message",JOptionPane.WARNING_MESSAGE);
        }else if(user.equals("SCC-19-0009694")&&pass.equals("10-03-2002")){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
-         Admin ad = new Admin();
+         mainDashboard ad = new mainDashboard();
 
-            Admin.accountName.setText(username.getText());
-          Admin.accountPass.setText(password.getText());
-           Admin.userName.setText(username.getText()); 
+            mainDashboard.acc_Username.setText(username.getText());
+          mainDashboard.acc_Pass.setText(password.getText());
+           mainDashboard.userName.setText(username.getText()); 
           // Admin.submit.setVisible(false);
-           Admin.reset.setVisible(false);
+          
          //  Admin.viewStatus.setVisible(false);
-            Admin.viewApplicants.setVisible(false);
-             Admin.manageApply.setVisible(false);
-            Admin.pendings.setVisible(false);
-         Admin.delete1.setVisible(false);
-          Admin.archieveData.setVisible(false);
-          Admin.viewApplicants.setVisible(false);
-           Admin.pendings.setVisible(false);
+            mainDashboard.viewApplicants.setVisible(false);
+             mainDashboard.manageApply.setVisible(false);
+            mainDashboard.pendings.setVisible(false);
+         mainDashboard.delete1.setVisible(false);
+          mainDashboard.archieveData.setVisible(false);
+          mainDashboard.viewApplicants.setVisible(false);
+           mainDashboard.pendings.setVisible(false);
          
            ad.setVisible(true);
             this.dispose();
@@ -370,21 +370,21 @@ public class LoginForm extends javax.swing.JFrame {
          }*/
          else if(user.equals("SCC-19-0009696")&&pass.equals("10-03-2001")){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
-         Admin ad = new Admin();
+         mainDashboard ad = new mainDashboard();
         
-            Admin.accountName.setText(username.getText());
-          Admin.accountPass.setText(password.getText());
-           Admin.userName.setText(username.getText()); 
+            mainDashboard.acc_Username.setText(username.getText());
+          mainDashboard.acc_Pass.setText(password.getText());
+           mainDashboard.userName.setText(username.getText()); 
           // Admin.submit.setVisible(false);
-           Admin.reset.setVisible(false);
+           
            //Admin.viewStatus.setVisible(false);
-           Admin.viewApplicants.setVisible(false);
-             Admin.manageApply.setVisible(false);
-            Admin.pendings.setVisible(false);
-         Admin.delete1.setVisible(false);
-          Admin.archieveData.setVisible(false);
-          Admin.viewApplicants.setVisible(false);
-           Admin.pendings.setVisible(false);
+           mainDashboard.viewApplicants.setVisible(false);
+             mainDashboard.manageApply.setVisible(false);
+            mainDashboard.pendings.setVisible(false);
+         mainDashboard.delete1.setVisible(false);
+          mainDashboard.archieveData.setVisible(false);
+          mainDashboard.viewApplicants.setVisible(false);
+           mainDashboard.pendings.setVisible(false);
            ad.setVisible(true);
             this.dispose();
        }
@@ -427,15 +427,16 @@ public class LoginForm extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"Please Fill up all the fields.","Message",JOptionPane.WARNING_MESSAGE);
        }else if(user.equals("ADMIN1")&&pass.equals("PASSWORD1")){
         JOptionPane.showMessageDialog(null,"SUCCESS!");
-         Admin ad = new Admin();
+         mainDashboard ad = new mainDashboard();
        
-            Admin.accountName.setText(username.getText());
-          Admin.accountPass.setText(password.getText());
-           Admin.userName.setText(username.getText()); 
+            mainDashboard.acc_Username.setText(username.getText());
+          mainDashboard.acc_Pass.setText(password.getText());
+           mainDashboard.userName.setText(username.getText()); 
           // Admin.submit.setVisible(false);
-           Admin.reset.setVisible(false);
-           Admin.viewStatus.setVisible(false);
-            Admin.nav_apply.setVisible(false);
+           
+           mainDashboard.viewStatus.setVisible(false);
+            mainDashboard.guide.setVisible(false);
+            mainDashboard.nav_apply.setVisible(false);
             
            ad.setVisible(true);
              this.dispose();
