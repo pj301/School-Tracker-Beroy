@@ -6,11 +6,14 @@
 package adminMain;
 
 import LoginForm.LoginForm;
+import static com.sun.webkit.perf.WCFontPerfLogger.reset;
 import config.db_configuration;
 //import static adminMain..table;
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /*import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -21,6 +24,7 @@ import javax.swing.JOptionPane;
 //import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 /**
  *
@@ -38,6 +42,30 @@ public class mainDashboard extends javax.swing.JFrame {
     db_configuration dbc=new db_configuration();
     ResultSet rs=dbc.getData("SELECT*FROM tbl_student");
     jTable8.setModel(DbUtils.resultSetToTableModel(rs));
+    
+    
+    }
+    public void reset(){
+           FName.setText("");
+            LName.setText("");
+            MName.setText("");
+            Bdate.setText("");
+            number.setText("");
+           email.setText("");
+            brgy.setText("");
+            purok.setText("");
+          city.setText("");
+           province.setText("");
+           postal.setText("");
+           gender.setText("");
+    }
+    public void displayData() throws SQLException{
+    
+    db_configuration dbc=new db_configuration();
+    ResultSet rs=dbc.getData("SELECT*FROM tbl_student");
+    jTable8.setModel(DbUtils.resultSetToTableModel(rs));
+    
+    
     }
     
     public mainDashboard() {
@@ -207,12 +235,19 @@ public class mainDashboard extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jTable8 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        sgen = new javax.swing.JTextField();
-        sid = new javax.swing.JTextField();
+        sbdate = new javax.swing.JTextField();
+        sgender = new javax.swing.JTextField();
         sname = new javax.swing.JTextField();
         sadd = new javax.swing.JTextField();
-        sstat = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        sname1 = new javax.swing.JTextField();
+        sname2 = new javax.swing.JTextField();
+        spostal = new javax.swing.JTextField();
+        semail = new javax.swing.JTextField();
+        scontact = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        sid = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         jLabel76 = new javax.swing.JLabel();
         viewPage = new javax.swing.JPanel();
         s1 = new javax.swing.JPanel();
@@ -1064,7 +1099,7 @@ public class mainDashboard extends javax.swing.JFrame {
         jLabel80.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel80.setText("DELETED SCHOLARSHIP APPLICANTS");
         archivePage.add(jLabel80);
-        jLabel80.setBounds(60, 90, 337, 40);
+        jLabel80.setBounds(330, 90, 337, 40);
 
         reset1.setBackground(new java.awt.Color(0, 43, 80));
         reset1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1112,6 +1147,11 @@ public class mainDashboard extends javax.swing.JFrame {
         archivePage.add(reset2);
         reset2.setBounds(600, 580, 220, 40);
 
+        jTable8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable8MouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(jTable8);
 
         archivePage.add(jScrollPane9);
@@ -1124,17 +1164,15 @@ public class mainDashboard extends javax.swing.JFrame {
             }
         });
         archivePage.add(jButton1);
-        jButton1.setBounds(190, 510, 81, 30);
-        archivePage.add(sgen);
-        sgen.setBounds(30, 440, 270, 50);
-        archivePage.add(sid);
-        sid.setBounds(30, 160, 270, 50);
+        jButton1.setBounds(190, 610, 73, 30);
+        archivePage.add(sbdate);
+        sbdate.setBounds(50, 230, 230, 40);
+        archivePage.add(sgender);
+        sgender.setBounds(50, 450, 230, 40);
         archivePage.add(sname);
-        sname.setBounds(30, 230, 270, 50);
+        sname.setBounds(50, 100, 230, 40);
         archivePage.add(sadd);
-        sadd.setBounds(30, 300, 270, 50);
-        archivePage.add(sstat);
-        sstat.setBounds(30, 370, 270, 50);
+        sadd.setBounds(50, 370, 230, 30);
 
         jButton3.setText("SAVE");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -1143,7 +1181,37 @@ public class mainDashboard extends javax.swing.JFrame {
             }
         });
         archivePage.add(jButton3);
-        jButton3.setBounds(70, 510, 63, 30);
+        jButton3.setBounds(60, 610, 57, 30);
+        archivePage.add(sname1);
+        sname1.setBounds(50, 150, 230, 30);
+        archivePage.add(sname2);
+        sname2.setBounds(50, 190, 230, 30);
+        archivePage.add(spostal);
+        spostal.setBounds(50, 410, 110, 30);
+        archivePage.add(semail);
+        semail.setBounds(50, 320, 230, 40);
+        archivePage.add(scontact);
+        scontact.setBounds(50, 280, 230, 30);
+
+        jButton2.setText("UPDATE");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        archivePage.add(jButton2);
+        jButton2.setBounds(300, 620, 71, 23);
+        archivePage.add(sid);
+        sid.setBounds(50, 510, 230, 40);
+
+        jButton4.setText("DELETE");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        archivePage.add(jButton4);
+        jButton4.setBounds(390, 630, 69, 23);
 
         jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconImagesFolder/27565.png"))); // NOI18N
         archivePage.add(jLabel76);
@@ -2408,8 +2476,7 @@ u_name.setVisible(true);
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
      db_configuration dbc=new db_configuration();
-     dbc.insertData("INSERT INTO tbl_student(st_name,st_address,st_status,_st_gender)VALUES('"+"',"
-             + "'"+sname.getText()+"','"+sadd.getText()+"','"+sstat.getText()+"','"+sgen.getText()+"')");
+     dbc.insertData("INSERT INTO tbl_student(st_fname,st_lname,st_mname,st_bdate,st_contact,st_email,st_address,st_postal,st_gender)VALUES('"+sname.getText()+"','"+sname1.getText()+"','"+sname2.getText()+"','"+sbdate.getText()+"','"+scontact.getText()+"','"+semail.getText()+"','"+sadd.getText()+"','"+spostal.getText()+"','"+sgender.getText()+"')");
   
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -2432,6 +2499,55 @@ u_name.setVisible(true);
     private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saveButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    db_configuration dbc=new db_configuration();
+        int num = dbc.updateData("UPDATE tbl_student "
+                 + "SET st_fname = '"+sname.getText()+"',st_lname = '"+sname1.getText()+"',st_mname = '"+sname2.getText()+"',st_bdate = '"+sbdate.getText()+"', st_contact = '"+scontact.getText()+"',st_email = '"+semail.getText()+"',st_address='"+sadd.getText()+"',st_postal = '"+spostal.getText()+"', st_gender='"+sgender.getText()+"'  "
+                                + "WHERE st_id = '"+sid.getText()+"'");
+     if(num == 0){
+           
+        }else{
+           JOptionPane.showMessageDialog(null, "Updated Successfully!");
+        try {
+           fillTable();
+        } catch (SQLException ex) {
+            Logger.getLogger(mainDashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           reset();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int rowIndex = jTable8.getSelectedRow();
+       if(rowIndex < 0){
+           JOptionPane.showMessageDialog(null, "Please select a data first");
+       }else{
+            TableModel model =jTable8.getModel();
+            Object value = model.getValueAt(rowIndex, 0);
+            String id = value.toString();
+             int a=JOptionPane.showConfirmDialog(null,"Are you sure?");  
+                    if(a==JOptionPane.YES_OPTION){  
+                            db_configuration dbc=new db_configuration();
+                            dbc.deleteData(Integer.parseInt(id));
+                try {
+                    fillTable();
+                } catch (SQLException ex) {
+                    Logger.getLogger(mainDashboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                            reset();
+                    }    
+       }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTable8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable8MouseClicked
+      
+        DefaultTableModel tbl= (DefaultTableModel)jTable8.getModel();
+         String tbl1= (String) tbl.getValue()jTable8.getModel();
+           DefaultTableModel tbl2= (DefaultTableModel)jTable8.getModel();
+         
+           
+    }//GEN-LAST:event_jTable8MouseClicked
 
 public static void AddRowToJTable(Object[] dataRow){
   
@@ -2513,7 +2629,9 @@ public static void AddRowToJTable(Object[] dataRow){
     public static javax.swing.JPanel guide;
     private javax.swing.JPanel inHeader;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     public static javax.swing.JComboBox<String> jCombo2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2695,12 +2813,17 @@ public static void AddRowToJTable(Object[] dataRow){
     private javax.swing.JTextField sadd;
     private javax.swing.JButton saveButton;
     private javax.swing.JButton saveButton1;
+    private javax.swing.JTextField sbdate;
     private javax.swing.JLabel scc;
     private javax.swing.JPanel scholarLogo;
-    private javax.swing.JTextField sgen;
+    private javax.swing.JTextField scontact;
+    private javax.swing.JTextField semail;
+    private javax.swing.JTextField sgender;
     private javax.swing.JTextField sid;
     private javax.swing.JTextField sname;
-    private javax.swing.JTextField sstat;
+    private javax.swing.JTextField sname1;
+    private javax.swing.JTextField sname2;
+    private javax.swing.JTextField spostal;
     private javax.swing.JPanel steps;
     public static javax.swing.JPanel submit;
     private static javax.swing.JTabbedPane switchTab;
